@@ -2,5 +2,34 @@
 <app-header titulo="Venta"></app-header>
 
 <ion-content >
+    <ion-card *ngFor="let s of sesion | async" color="dark" mode="ios">
+        <ion-card-header>
+          <ion-card-subtitle>{{s.tipo}}</ion-card-subtitle>
+          <ion-card-title>{{s.nombre}} {{s.apellidos}}</ion-card-title>
+        </ion-card-header>
+    </ion-card>
+    <ion-item color="tertiary" lines="inset" mode="ios">
+    </ion-item>
+    <ion-card *ngFor="let l of listaP">
+        <ion-list>
+            <ion-item lines="none" mode="ios">
+                <ion-label><h1>{{l.nombre}}: <ion-text color="success">
+                    <h1>${{l.precio}}</h1>
+                </ion-text></h1></ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-item color="tertiary"  lines="inset" mode="ios">
+        <ion-icon slot="start" name="cash-outline"></ion-icon>          
+        <ion-label><h1>Total: <ion-text color="success">
+            <h1>${{total}}</h1>
+        </ion-text></h1></ion-label>
+    </ion-item>
+    <ion-button expand="full" color="secondary" (click)="menuP()">Agregar</ion-button>
+    <ion-button expand="full" color="success" (click)="venta()">Realizar Compra</ion-button>
+    <ion-button expand="full" color="danger" (click)="cancelar()">Cancelar</ion-button>
+
+
+    
 
 </ion-content>

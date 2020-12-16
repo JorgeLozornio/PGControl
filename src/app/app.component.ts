@@ -25,8 +25,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    this.backendService.getUsuarios().subscribe(usuarios => {
-      console.log(usuarios);
-    })
+    
+    
   }
 }

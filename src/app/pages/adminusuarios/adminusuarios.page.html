@@ -1,14 +1,43 @@
 <app-header titulo="Administración de Usuarios"></app-header>
 
 <ion-content>
-  
+
   <ion-list>
-    
-    <ion-item *ngFor="let u of usuarios | async" mode="ios">
-      <ion-icon slot="start" name="person-outline"></ion-icon>      
-      <ion-label>{{u.title}}</ion-label>
-    </ion-item>
+
+    <ion-card *ngFor="let u of usuarios | async" color="dark" mode="ios">
+      <ion-card-header>
+        <ion-card-subtitle>{{u.tipo}}</ion-card-subtitle>
+        <ion-card-title>{{u.nombre}} {{u.apellidos}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-item class="back">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-label>Telefono: {{u.telefono}}</ion-label>
+      </ion-item>
+
+      <ion-item class="back">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-label>Email: {{u.email}}</ion-label>
+      </ion-item>
+
+      <ion-item class="back">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-label>Domicilio: {{u.domicilio}}</ion-label>
+      </ion-item>
+
+      <ion-item class="back">
+        <ion-button (click)="guardar(u)" color="tertiary" fill="solid" slot="start"><ion-icon name="create-outline" slot="start"></ion-icon>Editar</ion-button>
+        <ion-button (click)="eliminarAlerta(u.idusuario)" color="danger" fill="solid" slot="end"><ion-icon name="trash-outline" slot="start"></ion-icon>Eliminar</ion-button>
+      </ion-item>
+
+    </ion-card>
 
   </ion-list>
+
+  <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="crearUsuarios()">
+      <ion-icon name="person-add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

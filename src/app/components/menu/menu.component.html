@@ -8,44 +8,50 @@
     </ion-header>
 
     <ion-content class="back">
+      <p></p>
+      <ion-label><h1>Pollos Gris</h1></ion-label>      
+      <img class="icon2" src="assets/icon/pollo.png">
+      <p></p>
+      
+
       <ion-list>
-        <ion-item detail lines="none" mode="ios" routerLink="/venta">
+        <ion-item detail lines="inset" mode="ios" routerLink="/venta">
           <ion-icon slot="start" name="storefront-outline"></ion-icon>          
           <ion-label><h1>Venta</h1></ion-label>
         </ion-item>
-        <ion-item mode="ios" lines="none" routerLink="/corte" detail>
+        <ion-item (click)="crearCorte()" mode="ios" lines="inset"  detail>
           <ion-icon slot="start" name="albums-outline"></ion-icon>
           <ion-label><h1>Corte de caja</h1></ion-label>
         </ion-item>     
-        <ion-item mode="ios" lines="none">
+        <ion-item mode="ios" lines="inset">
           <ion-icon slot="start" name="document-text-outline"></ion-icon>
           <ion-label><h1>Informes</h1></ion-label>
         </ion-item> 
         <ion-item mode="ios" lines="none">
           <ion-list>
-            <ion-item mode="ios" lines="none" detail routerLink="/infoventas">
+            <ion-item mode="ios" lines="inset" detail routerLink="/infoventas">
               <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
               <ion-label><h1>Ventas</h1></ion-label>
             </ion-item> 
-            <ion-item mode="ios" lines="none" detail routerLink="/infocortes"> 
+            <ion-item mode="ios" lines="inset" detail routerLink="/infocortes"> 
               <ion-icon slot="start" name="file-tray-full-outline"></ion-icon>
               <ion-label><h1>Cortes de caja</h1></ion-label>
             </ion-item> 
-            <ion-item mode="ios" lines="none" detail routerLink="/infoinventario">
+            <!-- <ion-item mode="ios" lines="inset" detail routerLink="/infoinventario">
               <ion-icon slot="start" name="newspaper-outline"></ion-icon>
               <ion-label><h1>Inventario</h1></ion-label>
-            </ion-item> 
+            </ion-item>  -->
           </ion-list>
         </ion-item>
-        <ion-item mode="ios" lines="none" detail routerLink="/adminusuarios">
+        <ion-item mode="ios" lines="inset" detail routerLink="/adminusuarios">
           <ion-icon slot="start" name="people-outline"></ion-icon>
           <ion-label><h1>Administrar Usuarios</h1></ion-label>
         </ion-item> 
-        <ion-item mode="ios" lines="none" detail routerLink="/adminproductos">
+        <!-- <ion-item mode="ios" lines="inset" detail routerLink="/adminproductos">
           <ion-icon slot="start" name="basket-outline"></ion-icon>
           <ion-label><h1>Administrar Productos</h1></ion-label>
-        </ion-item> 
-        <ion-item color="danger" lines="none" mode="ios" detail routerLink="/login">
+        </ion-item>  -->
+        <ion-item color="danger" lines="inset" mode="ios" detail routerLink="/login">
           <ion-icon slot="start" name="power-outline"></ion-icon>
           <ion-label><h1>Cerrar Sesión</h1></ion-label>
         </ion-item> 

@@ -1,5 +1,6 @@
 .back{
     --ion-background-color: #ffe073;
+    --border-color: black;
 }
 
 .icon{
@@ -8,6 +9,14 @@
     margin-left: auto;
     margin-right: auto;
     width: 20%;
+}
+
+.icon2{
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
 }
 
 .ip{
@@ -34,4 +43,18 @@
     --color: #cca900;
     margin-left: auto;
     margin-right: auto;
+}
+
+ion-icon {
+    &[class*=”custom-”] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+}
+    &[class*=”custom-pokemon”] {
+    mask-image: url(../assets/icon/pierna.png);
+    }
 }

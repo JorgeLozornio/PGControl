@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>infoventas</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Ventas realizadas"></app-header>
 
 <ion-content>
+
+  <ion-list>
+
+    <ion-card *ngFor="let v of ventas | async" color="dark" mode="ios">
+      <ion-card-header>
+        <ion-card-subtitle>ID Venta: {{v.idventa}} <p></p> ID Usuario: {{v.idusuario}} <p></p> Usuario: {{v.nombre}} {{v.apellidos}}</ion-card-subtitle>
+        <ion-card-title YYYY-MM-DD>Fecha: {{v.fecha}}       Hora: {{v.hora}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-item class="back">
+        <!-- <ion-icon name="call-outline" slot="start"></ion-icon> -->
+        <ion-label>{{v.descripcion}}</ion-label>
+      </ion-item>
+
+      <ion-item class="back">
+        <!-- <ion-icon name="mail-outline" slot="start"></ion-icon> -->
+        <ion-label>Monto de venta: ${{v.montoventa}}</ion-label>
+      </ion-item>
+
+    </ion-card>
+
+    
+
+  </ion-list>
 
 </ion-content>

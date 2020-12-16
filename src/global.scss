@@ -32,10 +32,19 @@
 
 .icon{
     display: block;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
+}
+
+.icon2{
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
 .ip{
@@ -68,4 +77,18 @@
     text-align: center;
     --border-style: none;
     --ion-background-color: #ffe073;
+}
+
+ion-icon {
+    &[class*=”custom-”] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+}
+    &[class*=”custom-pokemon”] {
+    mask-image: url(/assets/icon/pierna.png);
+    }
 }

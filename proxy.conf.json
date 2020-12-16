@@ -1,0 +1,7 @@
+{
+    "/https://backend-pgcontrol.herokuapp.com/*": {
+        "target": "https://backend-pgcontrol.herokuapp.com",
+        "secure": false,
+        "loglevel": "debug"
+    }
+}

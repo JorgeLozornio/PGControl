@@ -1,0 +1,42 @@
+<app-header titulo="Edición de Usuarios"></app-header>
+
+<ion-content>
+
+  <ion-item >    
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)] = "nombre"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Apellidos</ion-label>
+    <ion-input [(ngModel)] = "apellidos"></ion-input>
+  </ion-item>
+  <ion-item >    
+    <ion-label position="floating">Telefono</ion-label>
+    <ion-input [(ngModel)] = "telefono"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)] = "email"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)] = "contrasena" ></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Domicilio</ion-label>
+    <ion-input [(ngModel)] = "domicilio"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select [(ngModel)] = "tipo">
+      <ion-select-option value="Administrador">Administrador</ion-select-option>
+      <ion-select-option value="Cajero">Cajero</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <p></p>
+    <ion-button color="success" expand="full" (click)="editarUsuario()">Guardar</ion-button>
+    <ion-button color="danger" expand="full" (click)="cancelar()">Cancelar</ion-button>
+
+
+</ion-content>
