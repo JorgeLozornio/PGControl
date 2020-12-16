@@ -39,6 +39,11 @@ export class VentaPage implements OnInit {
       console.log(p)
     })
 
+    let date: Date = new Date();
+    console.log("Date = " + date);
+    console.log(date.getMonth())
+    console.log(date.getDay())
+
     this.suscription = this.backendService.refresh$.subscribe(() => {
       this.productos = this.backendService.getProductos();
     })
@@ -216,7 +221,6 @@ export class VentaPage implements OnInit {
   async cambio(t) {
     const alert = await this.alertController.create({
       header: 'Cambio: $'+t,
-      subHeader: 'Monto a pagar: '+t,
       buttons: [
         {
           text: 'Continuar',
@@ -248,6 +252,9 @@ export class VentaPage implements OnInit {
 
   crearVenta(){
     let date = new Date();
+    date.setDate(13);  
+    date.setMonth(13);  
+    date.setFullYear(2013);  
 
     this.backendService.crearVenta({
       "idusuario": this.idusuario,
