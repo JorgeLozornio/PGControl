@@ -24,10 +24,12 @@ export class EditarUsuariosPage implements OnInit {
   ngOnInit() {
   }
 
+  //Metodo para cerrar el modal de edición
   cancelar(){
     this.modalCtrl.dismiss();
   }
 
+  //Envio de datos para modificar un usaurio
   editarUsuario(){
     this.backendService.updateUsuario({
       "nombre":this.nombre,

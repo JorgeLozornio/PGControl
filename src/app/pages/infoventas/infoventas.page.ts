@@ -19,18 +19,9 @@ export class InfoventasPage implements OnInit {
   constructor(private backendService: BackendService) { }
 
   ngOnInit() {
+    //Petición al servidor para obtener las ventas realizadas
     this.ventas = this.backendService.getVentas();
   }
 
-  pdf(){
-    let docDefinition = {
-      content: [
-        'Hola pérros'
-      ]
-    };
-
-    this.pdfObject = pdfMake.createPdf(docDefinition)
-    this.pdfObject.download()
-  }
 
 }

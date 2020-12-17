@@ -16,6 +16,7 @@ export class InfocortesPage implements OnInit {
   constructor(private backendService: BackendService) { }
 
   ngOnInit() {
+    //Obtiene los cortes creados en la base de datos
     this.cortes = this.backendService.getCortes();
   }
 

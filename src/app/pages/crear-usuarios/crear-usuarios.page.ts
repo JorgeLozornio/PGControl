@@ -27,6 +27,8 @@ export class CrearUsuariosPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
+  //Modal de la pagina de admiinistrar usuarios, utilizado para enviar datos al servidor
+  //y crear un nuevo usuario
   crearUsuario(){
     this.backendService.crearUsuario({
       "nombre":this.nombre,

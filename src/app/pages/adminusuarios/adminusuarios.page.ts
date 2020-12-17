@@ -31,11 +31,13 @@ export class AdminusuariosPage implements OnInit {
   constructor(private modalCtrl: ModalController, private backendService: BackendService, public alertController: AlertController) { }
 
   ngOnInit() {
+    //Petición al servidor para obtener los usuarios registrados
     this.usuarios = this.backendService.getUsuarios();
     this.usuarios.subscribe(usuarios => {
       this.apellidos = usuarios[0].apellidos;
     })
 
+    //Petición utilizada pára refrescar la visualizacion de los usuarios
     this.suscription = this.backendService.refresh$.subscribe(() => {
       this.usuarios = this.backendService.getUsuarios();
     })
@@ -101,6 +103,7 @@ export class AdminusuariosPage implements OnInit {
     this.backendService.eliminarUsuario(id);
   }
 
+  //Alerta para asegurar la eliminación de un usuario
   async eliminarAlerta(u) {
     const alert = await this.alertController.create({
       header: 'Eliminar usuario',

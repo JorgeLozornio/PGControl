@@ -30,6 +30,8 @@ export class LoginPage implements OnInit {
     this.menuCtrl.enable(false);
   }
 
+  //Metodo utilizado para verificar que el
+  //usuario que esta intentando ingresar este registrado
   verificar(){
     this.backendService.eliminarSesion(1);
     this.usuarios = this.backendService.verificar2(this.email,this.contra);
