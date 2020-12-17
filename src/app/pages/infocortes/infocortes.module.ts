@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { InfocortesPageRoutingModule } from './infocortes-routing.module';
 
 import { InfocortesPage } from './infocortes.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InfocortesPageRoutingModule
+    InfocortesPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [InfocortesPage]
 })

@@ -8,6 +8,7 @@ import { contentTracing } from 'electron';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Producto } from '../interfaces/producto';
+import { idventa } from '../interfaces/idventa';
 
 @Injectable({
   providedIn: 'root'
@@ -105,15 +106,21 @@ export class BackendService {
 
   }
 
+  //OBTENER VENTA
+  idVenta(id){
+    const path = 'https://backend-pgcontrol.herokuapp.com/ventas/'+id;
+    return this.http.get<idventa[]>(path);
+  }
+
   //OBTENER CORTES
   getCortes(){
-    const path = 'https://backend-pgcontrol.herokuapp.com/usuarios';
+    const path = 'https://backend-pgcontrol.herokuapp.com/cortecaja';
     return this.http.get<Corte[]>(path);
   } 
 
   //CREAR CORTE
   crearCorte(corte) {
-    const path = 'https://backend-pgcontrol.herokuapp.com/ventas';
+    const path = 'https://backend-pgcontrol.herokuapp.com/cortecaja';
     return this.http.post(path,corte).pipe(
       tap(() => {
         this._refresh$.next();

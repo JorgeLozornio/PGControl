@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { Corte } from 'src/app/interfaces/corte';
+import { BackendService } from 'src/app/servicios/backend.service';
 
 @Component({
   selector: 'app-infocortes',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfocortesPage implements OnInit {
 
-  constructor() { }
+  cortes: Observable<Corte[]>;
+
+  constructor(private backendService: BackendService) { }
 
   ngOnInit() {
+    this.cortes = this.backendService.getCortes();
   }
 
 }

@@ -1,15 +1,17 @@
 {
-  "name": "PGControl",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
+  "name": "PollosGris",
+  "version": "0.9.0",
+  "author": "Moon Softwarek",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "electron-forge start",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "private": true,
   "dependencies": {
@@ -21,11 +23,14 @@
     "@angular/router": "~10.0.0",
     "@capacitor/core": "2.4.3",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/file-opener": "^5.30.0",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
-    "electron": "^11.0.3",
+    "electron-packager": "^15.2.0",
+    "electron-squirrel-startup": "^1.0.0",
     "ngx-electron": "^2.2.0",
+    "pdfmake": "^0.1.68",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -42,7 +47,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
-    "electron-packager": "^15.1.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
